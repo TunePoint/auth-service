@@ -11,6 +11,7 @@ public class EventUtils {
         return UserCreatedEvent.builder()
                 .userId(user.getId())
                 .username(user.getUsername())
+                .email(user.getEmail())
                 .time(LocalDateTime.now())
                 .build();
     }

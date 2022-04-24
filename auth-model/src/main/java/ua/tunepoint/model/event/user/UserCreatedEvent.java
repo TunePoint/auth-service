@@ -16,5 +16,6 @@ public class UserCreatedEvent implements DomainEvent {
 
     private Long userId;
     private String username;
+    private String email;
     private LocalDateTime time;
 }

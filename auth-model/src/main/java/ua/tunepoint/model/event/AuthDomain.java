@@ -6,7 +6,7 @@ import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
-public enum AccountDomain {
+public enum AuthDomain {
 
     USER("user");
 

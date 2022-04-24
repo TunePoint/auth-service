@@ -9,7 +9,7 @@ import ua.tunepoint.model.event.UserEventType;
 
 import java.util.Set;
 
-import static ua.tunepoint.model.event.AccountDomain.USER;
+import static ua.tunepoint.model.event.AuthDomain.USER;
 
 @Configuration
 public class EventConfiguration {
