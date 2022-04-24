@@ -1,13 +1,13 @@
 spring:
   application:
-    name: account-service
+    name: auth-service
   jackson:
     default-property-inclusion: non_null
   jpa:
     generate-ddl: false
     properties:
       hibernate:
-        default_schema: account
+        default_schema: auth
     hibernate:
       ddl-auto: none
     show-sql: true
