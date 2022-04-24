@@ -3,7 +3,7 @@ package ua.tunepoint.account.data.mapper;
 import org.mapstruct.Mapper;
 import ua.tunepoint.account.data.entity.Role;
 import ua.tunepoint.account.data.entity.User;
-import ua.tunepoint.model.response.payload.SignupPayload;
+import ua.tunepoint.auth.model.response.payload.SignupPayload;
 
 @Mapper(componentModel = "spring")
 public interface UserMapper {

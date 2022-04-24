@@ -5,11 +5,11 @@ import org.springframework.context.annotation.Configuration;
 import ua.tunepoint.event.starter.DomainRelation;
 import ua.tunepoint.event.starter.registry.DomainRegistry;
 import ua.tunepoint.event.starter.registry.builder.DomainRegistryBuilder;
-import ua.tunepoint.model.event.UserEventType;
+import ua.tunepoint.auth.model.event.UserEventType;
 
 import java.util.Set;
 
-import static ua.tunepoint.model.event.AuthDomain.USER;
+import static ua.tunepoint.auth.model.event.AuthDomain.USER;
 
 @Configuration
 public class EventConfiguration {

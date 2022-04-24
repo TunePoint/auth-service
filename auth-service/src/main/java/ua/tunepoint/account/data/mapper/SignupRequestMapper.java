@@ -1,6 +1,5 @@
 package ua.tunepoint.account.data.mapper;
 
-import lombok.RequiredArgsConstructor;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
@@ -9,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import ua.tunepoint.account.data.entity.Role;
 import ua.tunepoint.account.data.entity.User;
-import ua.tunepoint.model.request.SignupRequest;
+import ua.tunepoint.auth.model.request.SignupRequest;
 
 import java.util.Set;
 

@@ -1,4 +1,4 @@
-package ua.tunepoint.model.event;
+package ua.tunepoint.auth.model.event;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

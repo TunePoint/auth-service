@@ -1,9 +1,9 @@
-package ua.tunepoint.model.event;
+package ua.tunepoint.auth.model.event;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import ua.tunepoint.event.model.DomainEventType;
-import ua.tunepoint.model.event.user.UserCreatedEvent;
+import ua.tunepoint.auth.model.event.user.UserCreatedEvent;
 
 @Getter
 @RequiredArgsConstructor

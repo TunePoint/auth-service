@@ -1,9 +1,8 @@
-package ua.tunepoint.model.response;
+package ua.tunepoint.auth.model.response;
 
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import ua.tunepoint.model.response.payload.AuthenticationPayload;
+import ua.tunepoint.auth.model.response.payload.AuthenticationPayload;
 import ua.tunepoint.web.model.CommonResponse;
 
 @SuperBuilder

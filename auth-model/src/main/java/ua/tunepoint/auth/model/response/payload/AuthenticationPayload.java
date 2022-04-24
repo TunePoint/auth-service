@@ -1,4 +1,4 @@
-package ua.tunepoint.model.response.payload;
+package ua.tunepoint.auth.model.response.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

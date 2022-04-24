@@ -1,4 +1,4 @@
-package ua.tunepoint.model.response.payload;
+package ua.tunepoint.auth.model.response.payload;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -9,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class RefreshPayload {
+public class SignupPayload {
 
-    private String accessToken;
+    private Long id;
+    private String username;
 }

@@ -1,7 +1,7 @@
 package ua.tunepoint.account.utils;
 
 import ua.tunepoint.account.data.entity.User;
-import ua.tunepoint.model.event.user.UserCreatedEvent;
+import ua.tunepoint.auth.model.event.user.UserCreatedEvent;
 
 import java.time.LocalDateTime;
 

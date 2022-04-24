@@ -18,7 +18,7 @@ import java.util.Map;
 
 import static java.util.Collections.singletonList;
 import static ua.tunepoint.account.utils.EventUtils.toCreatedEvent;
-import static ua.tunepoint.model.event.AuthDomain.USER;
+import static ua.tunepoint.auth.model.event.AuthDomain.USER;
 
 @Service
 @RequiredArgsConstructor
