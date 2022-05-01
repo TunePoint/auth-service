@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public enum AuthDomain {
 
-    USER("user");
+    AUTH("auth");
 
     private final String name;
 }

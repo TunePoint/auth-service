@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCreatedEvent implements DomainEvent {
+public class UserRegisteredEvent implements DomainEvent {
 
     private Long userId;
     private String username;

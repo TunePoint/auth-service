@@ -8,7 +8,6 @@ import ua.tunepoint.auth.config.properties.ConfirmationProperties;
 import ua.tunepoint.auth.data.entity.ConfirmationCode;
 import ua.tunepoint.auth.data.repository.ConfirmationCodeRepository;
 import ua.tunepoint.auth.data.repository.UserRepository;
-import ua.tunepoint.auth.model.response.UserResponse;
 import ua.tunepoint.event.starter.publisher.EventPublisher;
 import ua.tunepoint.web.exception.BadRequestException;
 import ua.tunepoint.web.exception.ForbiddenException;
@@ -19,7 +18,7 @@ import java.util.Map;
 
 import static java.util.Collections.singletonList;
 import static ua.tunepoint.auth.utils.EventUtils.toCreatedEvent;
-import static ua.tunepoint.auth.model.event.AuthDomain.USER;
+import static ua.tunepoint.auth.model.event.AuthDomain.AUTH;
 
 @Service
 @RequiredArgsConstructor
@@ -66,7 +65,7 @@ public class ConfirmationService {
             throw new BadRequestException("incorrect confirmation code, try another one");
         }
 
-        eventPublisher.publish(USER.getName(),
+        eventPublisher.publish(AUTH.getName(),
                 singletonList(toCreatedEvent(user))
         );
     }

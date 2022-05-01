@@ -20,7 +20,7 @@ public abstract class SignupRequestMapper {
 
     @Mappings({
             @Mapping(target = "passwordHash", source = "request.password", qualifiedByName = "hashPassword"),
-            @Mapping(target = "username", source = "request.password"),
+            @Mapping(target = "username", source = "request.username"),
             @Mapping(target = "email", source = "request.email"),
             @Mapping(target = "roles", source = "roles")
     })

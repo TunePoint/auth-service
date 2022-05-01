@@ -3,13 +3,13 @@ package ua.tunepoint.auth.model.event;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import ua.tunepoint.event.model.DomainEventType;
-import ua.tunepoint.auth.model.event.user.UserCreatedEvent;
+import ua.tunepoint.auth.model.event.user.UserRegisteredEvent;
 
 @Getter
 @RequiredArgsConstructor
-public enum UserEventType implements DomainEventType {
+public enum AuthEventType implements DomainEventType {
 
-    USER_CREATED("created", UserCreatedEvent.class);
+    USER_REGISTERED("registered", UserRegisteredEvent.class);
 
     private final String name;
     private final Class<?> type;
