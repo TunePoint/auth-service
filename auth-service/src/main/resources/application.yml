@@ -10,23 +10,22 @@ spring:
         default_schema: auth
     hibernate:
       ddl-auto: none
-    show-sql: true
   liquibase:
     enabled: true
     change-log: classpath:/db/changelog.yml
   datasource:
-    url:
-    username:
-    password:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
 
 event:
-  bootstrap-servers:
+  bootstrap-servers: ${KAFKA_URL}
   service-name: ${spring.application.name}
 
 jwt:
   issuer: tunepoint
-  access-token-ttl: 3600000
-  refresh-token-ttl: 86400000
+  access-token-ttl: ${JWT_ACCESS_TOKEN_TTL:3600000}
+  refresh-token-ttl: ${JWT_REGRESH_TOKEN_TTL:86400000}
 
 confirmation:
   attempts: 3
@@ -39,11 +38,11 @@ confirmation:
     subject: "Tunepoint. Email confirmation"
 
 security:
-  secret: secret
+  secret: ${SECURITY_SECRET:secret}
 
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8765/eureka
+      defaultZone: ${EUREKA_URL:http://localhost:8765/eureka}
