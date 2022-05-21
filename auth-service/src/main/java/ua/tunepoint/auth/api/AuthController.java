@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -38,26 +39,26 @@ public class AuthController {
     private final ConfirmationService confirmationService;
 
     @PostMapping("/signup")
-    public ResponseEntity<SignupResponse> signup(@RequestBody @Valid SignupRequest request) {
+    public ResponseEntity<SignupResponse> signup(@RequestBody @Validated SignupRequest request) {
         var signupPayload = authenticationService.signup(request);
         var response = SignupResponse.builder().payload(signupPayload).build();
         return ResponseEntity.ok(response);
     }
 
     @PostMapping("/email/confirm")
-    public ResponseEntity<StatusResponse> emailConfirm(@RequestBody @Valid EmailConfirmationRequest request) {
+    public ResponseEntity<StatusResponse> emailConfirm(@RequestBody @Validated EmailConfirmationRequest request) {
         confirmationService.confirmEmail(request.getEmail(), request.getCode(), request.getPassword());
         return ResponseEntity.ok(StatusResponse.builder().build());
     }
 
     @PostMapping("/email/resend")
-    public ResponseEntity<StatusResponse> emailResend(@RequestBody @Valid EmailResendRequest request) {
+    public ResponseEntity<StatusResponse> emailResend(@RequestBody @Validated EmailResendRequest request) {
         confirmationService.resendEmail(request.getEmail(), request.getPassword());
         return ResponseEntity.ok(StatusResponse.builder().build());
     }
 
     @PostMapping("/token")
-    public ResponseEntity<AuthenticationResponse> token(@RequestBody @Valid AuthenticationRequest request) {
+    public ResponseEntity<AuthenticationResponse> token(@RequestBody @Validated AuthenticationRequest request) {
         var authenticationPayload = authenticationService.authenticate(request);
         var response = AuthenticationResponse.builder().payload(authenticationPayload).build();
         return ResponseEntity.ok(response);
@@ -73,7 +74,7 @@ public class AuthController {
 
     @PreAuthorize("isAuthenticated()")
     @PutMapping("/password")
-    public ResponseEntity<StatusResponse> updatePassword(@RequestBody UpdatePasswordRequest request, @AuthenticationPrincipal UserPrincipal currentUser) {
+    public ResponseEntity<StatusResponse> updatePassword(@RequestBody @Validated UpdatePasswordRequest request, @AuthenticationPrincipal UserPrincipal currentUser) {
         authenticationService.updatePassword(request, currentUser.getId());
         return ResponseEntity.ok(StatusResponse.builder().build());
     }

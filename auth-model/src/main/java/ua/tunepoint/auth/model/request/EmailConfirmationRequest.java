@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Data
 @AllArgsConstructor
@@ -19,5 +20,6 @@ public class EmailConfirmationRequest {
     private String code;
 
     @NotBlank
+    @Size(min = 6, max = 64)
     private String password;
 }

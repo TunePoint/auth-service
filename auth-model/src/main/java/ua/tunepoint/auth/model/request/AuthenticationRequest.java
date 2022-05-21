@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Email;
+import javax.validation.constraints.Size;
 
 @Data
 @NoArgsConstructor
@@ -13,5 +14,7 @@ public class AuthenticationRequest {
 
     @Email
     private String email;
+
+    @Size(min = 6, max = 64)
     private String password;
 }
